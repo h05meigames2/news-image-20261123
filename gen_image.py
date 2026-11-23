@@ -40,7 +40,7 @@ def font(name, size):
 F_TITLE = font("DejaVuSans-Bold.ttf", 64)
 F_DATE = font("DejaVuSans-Bold.ttf", 32)
 F_LEAD_TAG = font("DejaVuSans-Bold.ttf", 20)
-F_LEAD_HEAD = font("DejaVuSans-Bold.ttf", 40)
+F_LEAD_HEAD = font("DejaVuSans-Bold.ttf", 56)
 F_LEAD_DECK = font("DejaVuSans.ttf", 20)
 F_TAG = font("DejaVuSans-Bold.ttf", 15)
 F_HEAD = font("DejaVuSans-Bold.ttf", 28)
@@ -204,12 +204,12 @@ def render():
     d.rectangle([mx + 10, ly0 + 10, mx + 10 + tag_w, ly0 + 38], fill=RED)
     d.text((mx + 16, ly0 + 13), tag_txt, font=F_LEAD_TAG,
            fill=(255, 255, 255))
-    head = "COP31 talks fail as fossil-fuel language is dropped"
+    head = "COP31 talks fail"
     lines = wrap(d, head, F_LEAD_HEAD, right - mx - 24)
-    y = ly0 + 44
+    y = ly0 + 54
     for ln in lines:
         d.text((mx + 12, y), ln, font=F_LEAD_HEAD, fill=INK)
-        y += 46
+        y += 62
     deck = ("EU and others reject any deal without a fossil-fuel phase-out; "
             "Turkiye's final draft omits the words 'fossil fuels'.")
     for ln in wrap(d, deck, F_LEAD_DECK, right - mx - 24):
